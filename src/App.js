@@ -35,7 +35,7 @@ class App extends Component {
 
 onRouteChange = (route) => {
   if(route === 'signout'){
-    this.setState(initialState)
+    this.setState(initialState);
   } else if(route === 'home'){
     this.setState({isSignedIn: true});
     console.log(this.state.isSignedIn);
@@ -47,7 +47,7 @@ onRouteChange = (route) => {
     const {isSignedIn, route} = this.state;
     return (
      <div className="App">
-       <Navigation onRouteChange={this.onRouteChange} isSignedin={isSignedIn}/>
+       <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn}/>
      { route === 'home'
      ? <div>
        <Home/>
