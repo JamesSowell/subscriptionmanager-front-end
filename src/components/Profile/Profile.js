@@ -3,7 +3,7 @@ import Welcome from '../Welcome/Welcome';
 import SubsForm from '../Subscriptions/SubsForm';
 import SubsList from '../Subscriptions/SubsList';
 
-function Home (){
+function Profile (){
     const [subs, setSubs] = useState([]);
 
     function addSub(sub) {
@@ -27,4 +27,4 @@ function Home (){
   );
 }
 
-export default Home;
+export default Profile;

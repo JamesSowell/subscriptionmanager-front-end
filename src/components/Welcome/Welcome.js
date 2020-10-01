@@ -1,20 +1,20 @@
 import React from 'react';
 
-class Welcome extends React.Component{
-    render(){
+const Welcome = ({name, email}) => {
+
       return(
         <div>
           <div>
             <div className='black f3'>
-              Wames, your current entry count is...
+              {`Welcome ${name}, here are your`}
             </div>
             <div className='blue f1'>
-              5000
+              SUBSCRIPTIONS
             </div>
           </div>
       </div>
       );
-    }
+
 
 }
 

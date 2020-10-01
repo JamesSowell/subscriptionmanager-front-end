@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
-import Home from './components/Home/Home';
+import Profile from './components/Profile/Profile';
 import './App.css';
 
 
@@ -10,10 +10,8 @@ const initialState = {
   route: 'signin',
   isSignedIn: false,
   user: {
-    id: '',
     name: '',
-    email: '',
-    joined: ''
+    email: ''
   },
   total: 0
 }
@@ -26,11 +24,9 @@ class App extends Component {
 
   loadUser = (data) => {
     this.setState({ user: {
-      id: data.id,
       name: data.name,
-      email: data.email,
-      joined: data.joined
-    }})
+      email: data.email
+    }});
   }
 
 onRouteChange = (route) => {
@@ -50,7 +46,7 @@ onRouteChange = (route) => {
        <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn}/>
      { route === 'home'
      ? <div>
-       <Home/>
+       <Profile name={this.state.user.name} email={this.state.user.email}/>
       </div>
     : (
       route   === 'signin'

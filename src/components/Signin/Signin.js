@@ -18,16 +18,21 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    {/*fetch(backend)*/ }
-    const james = {
-      id: 3,
-      name: 'james',
-      email: 'james@gmail.com',
-      joined: ''
-    }
-    this.props.loadUser(james);
-    this.props.onRouteChange('home');
-    console.log(this.props.onRouteChange);
+    fetch('http://localhost:3000/signin', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: this.state.signInEmail,
+        password: this.state.signInPassword
+      })
+    })
+      .then(response => response.json())
+      .then(user =>{
+        if (user.email !== "") {
+          this.props.loadUser(user);
+          this.props.onRouteChange('home');
+        }
+      })
   }
 
   render(){

@@ -5,27 +5,26 @@ import uuid, { v4 as uuidv4} from "uuid";
 function SubsForm ({addSub}){
   const [sub, setSub] = useState({
     id: "",
-    task: "",
-    completed: false
+    sub_name: ""
   });
 
   function handleTaskInputChange(e) {
-    setSub({ ...sub, task: e.target.value});
+    setSub({ ...sub, sub_name: e.target.value});
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    if(sub.task.trim()){
+    if(sub.sub_name.trim()){
       addSub({ ...sub, id: uuidv4() });
       // reset task input
-      setSub({ ...sub, task: ""});
+      setSub({ ...sub, sub_name: ""});
     }
   }
 
   return(
     <form onSubmit={handleSubmit}>
       <input
-        name="task"
+        name="sub_name"
         type="text"
         value={sub.task}
         onChange={handleTaskInputChange}
