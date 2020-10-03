@@ -4,7 +4,22 @@ import React from 'react';
 function Sub({sub, removeSub}) {
 
   function handleRemoveClick(){
-    removeSub(sub.id);
+    fetch('http://localhost:3000/deletesubscription', {
+      method: 'delete',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subName: sub.sub_name,
+        userEmail: sub.user_email
+      })
+    })
+      .then(response => {
+        if(response.json() == 'sub erased'){
+          removeSub(sub.id);
+        }
+
+      })
+      .catch(err => console.log("ok so this didn't work"));
+    //removeSub(sub.id);
   }
 
   return (
@@ -13,13 +28,13 @@ function Sub({sub, removeSub}) {
         <li
           style={{
             color: "black",
-            textDecoration: sub.completed ? "Line-through" : null
           }}
-        >{sub.task}
+        >{sub.sub_name} {sub.sub_price}
         </li>
       <button onClick={handleRemoveClick}>X</button>
     </div>
   )
+
 }
 
 export default Sub;

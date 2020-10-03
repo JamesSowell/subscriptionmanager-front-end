@@ -3,6 +3,7 @@ import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Profile from './components/Profile/Profile';
+import Welcome from './components/Welcome/Welcome';
 import './App.css';
 
 
@@ -34,7 +35,6 @@ onRouteChange = (route) => {
     this.setState(initialState);
   } else if(route === 'home'){
     this.setState({isSignedIn: true});
-    console.log(this.state.isSignedIn);
   }
   this.setState({route: route});
 }
@@ -46,8 +46,9 @@ onRouteChange = (route) => {
        <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn}/>
      { route === 'home'
      ? <div>
-       <Profile name={this.state.user.name} email={this.state.user.email}/>
-      </div>
+       <Welcome name={this.state.user.name} email={this.state.user.email} />
+       <Profile userEmail={this.state.user.email} />
+     </div>
     : (
       route   === 'signin'
       ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
