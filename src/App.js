@@ -14,8 +14,7 @@ const initialState = {
   user: {
     name: '',
     email: ''
-  },
-  total: 0
+  }
 }
 
 class App extends Component {
@@ -49,7 +48,7 @@ onRouteChange = (route) => {
      ? <div>
        <EraseUser userEmail={this.state.user.email}/>
        <Welcome name={this.state.user.name} email={this.state.user.email} />
-       <Profile userEmail={this.state.user.email} total={this.state.total} />
+       <Profile userEmail={this.state.user.email} />
      </div>
     : (
       route   === 'signin'
@@ -61,23 +60,5 @@ onRouteChange = (route) => {
    );
   }
 }
-
-
-{/*signInOrNot = (route) => {
-  switch(route){
-     case 'home':
-        return <Home/>;
-      case 'signing':
-        return <Signin/>;
-      default:
-        return <Register/>;
-   }
-}*/}
-
-
-{/* "Welcome (name)" and title to the right, "Subscriptions:
-and top-down components with name, price, and date of pay"
-return (all this ??) do I use return or break? react  */}
-
 
 export default App;

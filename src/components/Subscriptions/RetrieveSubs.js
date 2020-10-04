@@ -10,10 +10,8 @@ function RetrieveSubs({addSub, userEmail}){
     isLoaded: false
   });
 
-//// if fetch gets crazy one more undo to make it when it was working
+
   function handleLoadAllSubs(e){
-    //setSub({ ...sub, sub_name: "freaking", sub_price: "15", user_email:userEmail});
-    //console.log(sub.sub_name, sub.sub_price);
 
     fetch('http://localhost:3000/getsubscriptions', {
       method: 'post',
@@ -53,7 +51,7 @@ function RetrieveSubs({addSub, userEmail}){
       <button
         className="b pa2 ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
         onClick={handleLoadAllSubs}> Load all your subscriptions</button>
-      : <p>all Subscriptions are loaded</p>
+      : <legend className="f3 white ba w-15 pa2 fw6 ph0 mh0 pv2  b--black  f6 dib ba bg-black hover-white w-15">all Subscriptions are loaded</legend>
     }
     </div>
   );

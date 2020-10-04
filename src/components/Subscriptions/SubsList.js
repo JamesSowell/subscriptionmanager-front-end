@@ -1,7 +1,6 @@
 import React from 'react';
 import Sub from './Sub'
 
-{/* keeps track of our subscriptions state through a form*/}
 function SubsList ({subs, removeSub}) {
     return(
       <ul>

@@ -4,7 +4,7 @@ import SubsList from '../Subscriptions/SubsList';
 import RetrieveSubs from '../Subscriptions/RetrieveSubs';
 import Total from '../Subscriptions/Total';
 
-function Profile ({userEmail, total}){
+function Profile ({userEmail}){
     const [subs, setSubs] = useState([]);
 
     function addSub(sub) {
@@ -26,6 +26,7 @@ function Profile ({userEmail, total}){
         addSub={addSub}
         userEmail={userEmail}
       />
+      <Total subs={subs} />
       <SubsList
         subs={subs}
         removeSub={removeSub}

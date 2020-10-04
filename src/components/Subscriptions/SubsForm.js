@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import uuid, { v4 as uuidv4} from "uuid";
-// thi is your sentinal
-{/* keeps track of our subscriptions state through a form*/}
+
 function SubsForm ({addSub, userEmail}){
   const [sub, setSub] = useState({
     id: "",

@@ -21,13 +21,14 @@ function Sub({sub, removeSub}) {
   }
 
   return (
-    <div style={{display: 'flex', justifyContent:'flex-center'}}>
-        <li
+    <div style={{display: 'flex', justifyContent:'center'}}>
+        <ol
           style={{
-            color: "black",
+            color: "DarkSlateGrey",
           }}
-        >{sub.sub_name} {sub.sub_price}
-        </li>
+          className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-15"
+        >{sub.sub_name} ${sub.sub_price}
+        </ol>
       <button onClick={handleRemoveClick}>X</button>
     </div>
   )
