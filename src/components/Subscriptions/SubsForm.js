@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import uuid, { v4 as uuidv4} from "uuid";
-
+// thi is your sentinal
 {/* keeps track of our subscriptions state through a form*/}
 function SubsForm ({addSub, userEmail}){
   const [sub, setSub] = useState({
@@ -10,50 +10,6 @@ function SubsForm ({addSub, userEmail}){
     user_email: userEmail
   });
 
-  useEffect(() => {
-
-  }, []);
-
-  function showAllSubs(allSubs){
-    allSubs.foreach((userSub) => {
-      console.log(userSub);
-      setSub({
-        sub_name: userSub.sub_name,
-        sub_price: userSub.sub_price
-      });
-      console.log(sub.sub_name, sub.sub_price);
-      addSub({ ...sub, id: uuidv4() });
-      // reset form
-      setSub({sub_name: "", sub_price: "", user_email: userEmail});
-    });
-  }
-
-  function handleLoadAllSubs(e){
-    createSubComp("nose", 145);
-    {/*fetch('http://localhost:3000/getsubscriptions', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: sub.user_email
-      })
-    })
-    .then(response => response.json())
-    .then(allSubs => {
-      if (allSubs[0].sub_name) {
-        console.log(allSubs);
-        console.log(allSubs[0].sub_name,allSubs[0].sub_price.toString());
-        setSub({
-          sub_name: allSubs[0].sub_name,
-          sub_price: allSubs[0].sub_price
-        });
-        console.log(sub.sub_name, sub.sub_price);
-        addSub({ ...sub, id: uuidv4() });
-        // reset form
-        setSub({sub_name: "", sub_price: "", user_email: userEmail});
-      }
-    })   */}
-  }
-
   function handleNameInputChange(e) {
     setSub({ ...sub, sub_name: e.target.value});
   }
@@ -61,8 +17,6 @@ function SubsForm ({addSub, userEmail}){
   function handlePriceInputChange(e) {
     setSub({ ...sub, sub_price: e.target.value});
   }
-
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -73,39 +27,29 @@ function SubsForm ({addSub, userEmail}){
         body: JSON.stringify({
           subName: sub.sub_name,
           subPrice: sub.sub_price,
-          userEmail: sub.user_email,
-          startDate: sub.start_date
+          userEmail: sub.user_email
         })
       })
         .then(response => response.json())
         .then(newSub =>{
           if (newSub.sub_name) {
             console.log(newSub.sub_name, newSub.sub_price);
-            createSubComp(newSub.sub_name, newSub.sub_price);
+            addSub({ ...sub, id: uuidv4() });
+            // reset form
+            setSub({sub_name: "", sub_price: "", user_email: userEmail});
           }
         })
     }
   }
 
-  function createSubComp(subName, subPrice) {
-    setSub({
-      ...sub,
-      sub_name: subName,
-      sub_price: subPrice
-    });
-    console.log(sub.sub_name, sub.sub_price);
-    addSub({ ...sub, id: uuidv4() });
-    // reset form
-    setSub({sub_name: "", sub_price: "", user_email: userEmail});
-  }
+
 
   return(
     <div>
-      <div>
-        <button onClick={handleLoadAllSubs}> Load all your subscriptions</button>
-      </div>
+
       <form onSubmit={handleSubmit}>
         <input
+          className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-15"
           name="sub_name"
           type="text"
           placeholder="Name"
@@ -113,6 +57,7 @@ function SubsForm ({addSub, userEmail}){
           onChange={handleNameInputChange}
         />
         <input
+          className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-15"
           name="sub_name"
           type="number"
           placeholder="Price per month"

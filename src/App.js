@@ -49,7 +49,7 @@ onRouteChange = (route) => {
      ? <div>
        <EraseUser userEmail={this.state.user.email}/>
        <Welcome name={this.state.user.name} email={this.state.user.email} />
-       <Profile userEmail={this.state.user.email} />
+       <Profile userEmail={this.state.user.email} total={this.state.total} />
      </div>
     : (
       route   === 'signin'

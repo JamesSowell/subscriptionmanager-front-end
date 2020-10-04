@@ -21,7 +21,7 @@ function Sub({sub, removeSub}) {
   }
 
   return (
-    <div style={{display: 'flex', justifyContent:'center'}}>
+    <div style={{display: 'flex', justifyContent:'flex-center'}}>
         <li
           style={{
             color: "black",
