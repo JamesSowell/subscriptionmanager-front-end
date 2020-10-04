@@ -4,6 +4,7 @@ import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Profile from './components/Profile/Profile';
 import Welcome from './components/Welcome/Welcome';
+import EraseUser from './components/EraseUser/EraseUser';
 import './App.css';
 
 
@@ -46,6 +47,7 @@ onRouteChange = (route) => {
        <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn}/>
      { route === 'home'
      ? <div>
+       <EraseUser userEmail={this.state.user.email}/>
        <Welcome name={this.state.user.name} email={this.state.user.email} />
        <Profile userEmail={this.state.user.email} />
      </div>

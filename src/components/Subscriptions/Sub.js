@@ -12,19 +12,16 @@ function Sub({sub, removeSub}) {
         userEmail: sub.user_email
       })
     })
-      .then(response => {
-        if(response.json() == 'sub erased'){
+      .then(response => response.json())
+      .then(outcome => {
+        if(outcome == 'sub erased'){
           removeSub(sub.id);
         }
-
-      })
-      .catch(err => console.log("ok so this didn't work"));
-    //removeSub(sub.id);
+      });
   }
 
   return (
-    <div style={{display: "flex"}}>
-      <input type="checkbox" />
+    <div style={{display: 'flex', justifyContent:'center'}}>
         <li
           style={{
             color: "black",

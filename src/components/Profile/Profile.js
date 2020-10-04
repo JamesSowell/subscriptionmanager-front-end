@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import SubsForm from '../Subscriptions/SubsForm';
 import SubsList from '../Subscriptions/SubsList';
 
@@ -15,7 +15,7 @@ function Profile ({userEmail}){
 
     return (
     <div>
-      <p> Add your subscription, price, and date you started</p>
+      <p> Add your subscription and price per month</p>
       <SubsForm
         addSub={addSub}
         userEmail={userEmail}
