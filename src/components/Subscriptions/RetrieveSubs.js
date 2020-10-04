@@ -11,7 +11,7 @@ function RetrieveSubs({addSub, userEmail}){
   });
 
 
-  function handleLoadAllSubs(e){
+  function handleLoadAllSubs(){
 
     fetch('http://localhost:3000/getsubscriptions', {
       method: 'post',
@@ -42,17 +42,16 @@ function RetrieveSubs({addSub, userEmail}){
     }
   }
 
+  useEffect(handleLoadAllSubs,[]);
+
   useEffect(createSubComp, [sub]);
 
   return(
     <div>
-    { sub.isLoaded === false
-      ?
-      <button
-        className="b pa2 ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-        onClick={handleLoadAllSubs}> Load all your subscriptions</button>
-      : <legend className="f3 white ba w-15 pa2 fw6 ph0 mh0 pv2  b--black  f6 dib ba bg-black hover-white w-15">all Subscriptions are loaded</legend>
-    }
+     <legend className="f3 white ba w-15 pa2 fw6 ph0 mh0 pv2  b--black  f6 dib ba bg-black hover-white w-15">
+       Your Subscriptions
+     </legend>
+
     </div>
   );
 

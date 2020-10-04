@@ -17,16 +17,17 @@ function Profile ({userEmail}){
 
     return (
     <div>
-      <p> Add your subscription and price per month</p>
-      <RetrieveSubs
-        addSub={addSub}
-        userEmail={userEmail}
-      />
+      <p className='black f3'> Add your subscription and price per month</p>
+
       <SubsForm
         addSub={addSub}
         userEmail={userEmail}
       />
       <Total subs={subs} />
+      <RetrieveSubs
+        addSub={addSub}
+        userEmail={userEmail}
+      />
       <SubsList
         subs={subs}
         removeSub={removeSub}
