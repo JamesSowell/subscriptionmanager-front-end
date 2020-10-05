@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/subscriptionmanager-front-end/static/css/main.5f361e03.chunk.css",
+    "main.js": "/subscriptionmanager-front-end/static/js/main.156ccda3.chunk.js",
+    "main.js.map": "/subscriptionmanager-front-end/static/js/main.156ccda3.chunk.js.map",
+    "runtime-main.js": "/subscriptionmanager-front-end/static/js/runtime-main.76d2cf80.js",
+    "runtime-main.js.map": "/subscriptionmanager-front-end/static/js/runtime-main.76d2cf80.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/subscriptionmanager-front-end/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.7ec9bdcf.chunk.js": "/subscriptionmanager-front-end/static/js/2.7ec9bdcf.chunk.js",
+    "static/js/2.7ec9bdcf.chunk.js.map": "/subscriptionmanager-front-end/static/js/2.7ec9bdcf.chunk.js.map",
+    "index.html": "/subscriptionmanager-front-end/index.html",
+    "precache-manifest.a67cf2f00624068496f3d32f05ac88c7.js": "/subscriptionmanager-front-end/precache-manifest.a67cf2f00624068496f3d32f05ac88c7.js",
+    "service-worker.js": "/subscriptionmanager-front-end/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/subscriptionmanager-front-end/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/subscriptionmanager-front-end/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.7ec9bdcf.chunk.js.LICENSE.txt": "/subscriptionmanager-front-end/static/js/2.7ec9bdcf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76d2cf80.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.7ec9bdcf.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.156ccda3.chunk.js"
+  ]
+}
