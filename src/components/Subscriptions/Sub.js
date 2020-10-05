@@ -4,7 +4,7 @@ import React from 'react';
 function Sub({sub, removeSub}) {
 
   function handleRemoveClick(){
-    fetch('http://localhost:3000/deletesubscription', {
+    fetch('https://enigmatic-wave-54910.herokuapp.com/deletesubscription', {
       method: 'delete',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

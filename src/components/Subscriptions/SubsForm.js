@@ -20,7 +20,7 @@ function SubsForm ({addSub, userEmail}){
   function handleSubmit(e) {
     e.preventDefault();
     if(sub.sub_name.trim() && sub.sub_price.trim()){
-      fetch('http://localhost:3000/addsubscription', {
+      fetch('https://enigmatic-wave-54910.herokuapp.com/addsubscription', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({

@@ -4,7 +4,7 @@ function EraseUser({userEmail}) {
   const [accEmail, setAccEmail] = useState(userEmail);
 
   function EraseUser() {
-    fetch('http://localhost:3000/deleteaccount', {
+    fetch('https://enigmatic-wave-54910.herokuapp.com/deleteaccount', {
       method: 'delete',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

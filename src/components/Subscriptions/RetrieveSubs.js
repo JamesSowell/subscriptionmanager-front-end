@@ -13,7 +13,7 @@ function RetrieveSubs({addSub, userEmail}){
 
   function handleLoadAllSubs(){
 
-    fetch('http://localhost:3000/getsubscriptions', {
+    fetch('https://enigmatic-wave-54910.herokuapp.com/getsubscriptions', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
